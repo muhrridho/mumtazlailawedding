@@ -17,27 +17,28 @@
 			<h1>Mumtaz<br>Laila <span>&amp;</span></h1>
 			<p>HALAL 2017</p>
 		</div>
-		<a class="nav-bot" href="#main">
+		<button class="nav-bot" id="to-main">
 			<img src="images/ic_action_expand.png">
-		</a>
+		</button>
 	</div>
 	<div id="main" class="page page-content">
 		<div class="text-top">
 			<p class="top">Kami mengundang Saudara/i</p>
 			<p class="mid">Untuk menghadiri acara</p>
-			<p class="bot">Resepsi Pernikahan</p>
+			<p class="bot">Pernikahan</p>
 		</div>
 		<div class="middle">
-			<h1>Mumtaz Ali</h1>
-			<p class="parent">Putra dari Bpk Muadi Ahmad &amp; Ibu Mahmudah</p>
-			<h1>&amp;</h1>
 			<h1>Laila Rachmawati</h1>
-			<p class="parent">Putra dari Bpk Muadi Ahmad &amp; Ibu Mahmudah</p>
+			<p class="parent">Putri dari Bpk Dindin Djuandi S &amp; Ibu Lilis Kurniasari</p>
+			<h1>&amp;</h1>
+			<h1>Mumtaz Ali</h1>
+			<p class="parent">Putra dari Bpk <span>Drs.</span> Muadi Ahmad &amp; Ibu <span>Dra. Hj.</span> Siti Mahmudah</p>
 		</div>
 		<div class="text-top">
 			<p class="date-info">Yang akan dilaksanakan pada</p>
 			<p class="date">Minggu, 12 Maret 2017</p>
-			<p class="time">Pukul 11:00 - 13:00 WIB</p>
+			<p class="time"><span>Akad</span>: 08.00 - Selesai</p>
+			<p class="time"><span>Resepsi</span>: 11.00 - 13.00 WIB</p>
 			<br>
 			<p class="date-info">Bertempat di</p>
 			<p class="building">Gedung Balai Sespimma, Selapa Polri</p>
@@ -48,7 +49,46 @@
 
 			
 		</div>
-		<p class="footer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla placerat iaculis lectus, a imperdiet risus ultricies nec. Donec vitae lectus egestas, condimentum nunc id, aliquam orci. Praesent quis ligula fermentum, mattis nunc et, porttitor ex. Nulla lobortis odio nec ipsum fermentum, ac sollicitudin dui tempor.</p>
+		<p class="footer">Merupakan suatu kehormatan dan kebahagian bagi kami, apabila Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai.</p>
+		<p class="salam">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+
 	</div>
 </body>
+<script type="text/javascript">
+function runScroll() {
+  scrollTo(document.body, document.getElementById("main").getBoundingClientRect().top, 300);
+  return false;
+}
+var scrollme;
+scrollme = document.querySelector("#to-main");
+scrollme.addEventListener("click",runScroll,false)
+
+function scrollTo(element, to, duration) {
+    var start = element.scrollTop,
+        change = to - start,
+        increment = 20;
+
+    var animateScroll = function(elapsedTime) {        
+        elapsedTime += increment;
+        var position = easeInOut(elapsedTime, start, change, duration);                        
+        element.scrollTop = position; 
+        if (elapsedTime < duration) {
+            setTimeout(function() {
+                animateScroll(elapsedTime);
+            }, increment);
+        }
+    };
+
+    animateScroll(0);
+}
+
+function easeInOut(currentTime, start, change, duration) {
+    currentTime /= duration / 2;
+    if (currentTime < 1) {
+        return change / 2 * currentTime * currentTime + start;
+    }
+    currentTime -= 1;
+    return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
+}
+</script>
 </html>
